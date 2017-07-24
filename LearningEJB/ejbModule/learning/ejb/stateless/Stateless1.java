@@ -15,9 +15,9 @@ public class Stateless1 {
 	@PersistenceContext(unitName = "lotteries")
 	private EntityManager em;
 
-	public void doSomething(){
+	public void doSomething() {
 		em.createNativeQuery("update test set FIELD1 ='ALBIN' WHERE FIELD1 ='albin'").executeUpdate();
-		
+
 		em.createNativeQuery("update test1 set COLUMN1='ALBIN' where COLUMN1='albin'").executeUpdate();
 	}
 
