@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>LearningWeb</groupId>
 	<artifactId>LearningWeb</artifactId>
-	<version>1.0</version>
 	<packaging>war</packaging>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -32,5 +31,16 @@
 			<version>1.0</version>
 			<type>ejb</type>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.19.4</version>
+		</dependency>
 	</dependencies>
+	<parent>
+		<groupId>LearningParent</groupId>
+		<artifactId>LearningParent</artifactId>
+		<version>1.0</version>
+	</parent>
 </project>

@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>LearningEJB</groupId>
   <artifactId>LearningEJB</artifactId>
-  <version>1.0</version>
   <packaging>ejb</packaging>
   <build>
     <sourceDirectory>ejbModule</sourceDirectory>
@@ -32,4 +31,9 @@
       </plugin>
     </plugins>
   </build>
+  <parent>
+  	<groupId>LearningParent</groupId>
+  	<artifactId>LearningParent</artifactId>
+  	<version>1.0</version>
+  </parent>
 </project>
