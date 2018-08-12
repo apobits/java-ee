@@ -10,6 +10,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.xml.ws.BindingProvider;
+
+import com.millicom.rm.sync.client.clicklicense.QueryClicLicenses;
+import com.millicom.rm.sync.client.clicklicense.QueryClicLicensesManagerSOAPQSService;
+import com.millicom.rm.sync.client.clicklicense.QueryLicensesRequest;
+import com.millicom.rm.sync.client.clicklicense.QueryLicensesResponse;
 
 import learning.ejb.business.PersonBean;
 import learning.ejb.model.Person;
@@ -34,6 +40,21 @@ public class PersonResource {
 	// @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	// if no @Produces/@Consumes is specified all media types are accepted */*
 	public Person getPerson(@PathParam("id") long id, String lol) {
+
+		QueryClicLicenses port = new QueryClicLicensesManagerSOAPQSService().getQueryClicLicensesManagerSOAPQSPort();
+
+		((BindingProvider) port).getRequestContext().put("ws-security.username", "IT_FSAR");
+		((BindingProvider) port).getRequestContext().put("ws-security.password", "PruebasFS.1");
+
+		QueryLicensesRequest request = new QueryLicensesRequest();
+		request.setOperationName("Millicom");
+		try {
+			QueryLicensesResponse response = port.queryLicenses(request);
+			System.out.println(response.getLicensesNumber());
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
 		System.out.println(lol);
 		return personBean.getPerson(id);
 
