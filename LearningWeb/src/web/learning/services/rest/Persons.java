@@ -16,15 +16,15 @@ import learning.ejb.model.Person;
  */
 public class Persons {
 
-    private PersonBean personBean;
+	private PersonBean personBean;
 
-    public Persons(PersonBean personBean) {
-	this.personBean = personBean;
-    }
+	public Persons(PersonBean personBean) {
+		this.personBean = personBean;
+	}
 
-    @GET
-    public List<Person> getPersons() {
-	return personBean.getPersons();
-    }
+	@GET
+	public List<Person> getPersons() {
+		return personBean.getPersons();
+	}
 
 }

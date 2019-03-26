@@ -18,16 +18,21 @@ import learning.ejb.model.Person;
 @Stateless
 public class PersonBean {
 
-    @PersistenceContext(unitName = "apo")
-    private EntityManager em;
+	@PersistenceContext(unitName = "apo")
+	private EntityManager em;
 
-    public Person getPerson(long id) {
-	return em.find(Person.class, id);
-    }
+	public Person getPerson(long id) {
+		return em.find(Person.class, id);
+	}
 
-    @SuppressWarnings("unchecked")
-    public List<Person> getPersons() {
-	return em.createQuery("Select p from Person p").getResultList();
-    }
+	@SuppressWarnings("unchecked")
+	public List<Person> getPersons() {
+		return em.createQuery("Select p from Person p").getResultList();
+	}
+
+	public boolean savePerson(Person person) {
+		em.persist(person);
+		return true;
+	}
 
 }

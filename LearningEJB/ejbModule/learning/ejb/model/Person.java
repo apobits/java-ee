@@ -18,36 +18,51 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder = { "id", "name", "lastName" })
 public class Person {
 
-    private Long id;
+	private Long id;
 
-    private String name;
+	private String name;
 
-    private String lastName;
+	private String lastName;
 
-    @Id
-    public Long getId() {
-	return id;
-    }
+	public Person() {
 
-    public void setId(Long id) {
-	this.id = id;
-    }
+	}
 
-    public String getName() {
-	return name;
-    }
+	public Person(Long id, String name, String lastName) {
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+	}
 
-    public void setName(String name) {
-	this.name = name;
-    }
+	@Id
+	public Long getId() {
+		return id;
+	}
 
-    @Column(name = "LAST_NAME")
-    public String getLastName() {
-	return lastName;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setLastName(String lastName) {
-	this.lastName = lastName;
-    }
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Column(name = "LAST_NAME")
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return "Name: " + name + " \nLastName: " + lastName + " \nId: " + id;
+	}
 
 }

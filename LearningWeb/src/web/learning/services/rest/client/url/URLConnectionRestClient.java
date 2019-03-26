@@ -9,18 +9,18 @@ import java.net.URLConnection;
 
 public class URLConnectionRestClient {
 
-    public static void main(String[] args) throws MalformedURLException, IOException {
+	public static void main(String[] args) throws MalformedURLException, IOException {
 
-	URLConnection connection = new URL("http://localhost:8081/LearningWeb/PersonApp/person/all").openConnection();
-	connection.connect();
+		URLConnection connection = new URL("http://localhost:8081/LearningWeb/PersonApp/person/all").openConnection();
+		connection.connect();
 
-	InputStreamReader isr = new InputStreamReader(connection.getInputStream());
-	BufferedReader br = new BufferedReader(isr);
-	String line = null;
-	while ((line = br.readLine()) != null) {
-	    System.out.println(line);
+		InputStreamReader isr = new InputStreamReader(connection.getInputStream());
+		BufferedReader br = new BufferedReader(isr);
+		String line = null;
+		while ((line = br.readLine()) != null) {
+			System.out.println(line);
+		}
+
 	}
-
-    }
 
 }
