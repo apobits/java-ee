@@ -3,6 +3,12 @@
  */
 package web.learning.services.rest;
 
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.FileSystems;
+import java.nio.file.StandardOpenOption;
+
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -63,10 +69,24 @@ public class PersonResource {
 	@PUT
 	@Path("save")
 	public String savePerson(Person person) {
-		
+
 		personBean.savePerson(person);
 
 		return "Person " + person + " has been saved successfully";
+	}
+
+	@POST
+	@Path("test")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void test(String data) {
+
+		try (FileChannel fc = FileChannel.open(FileSystems.getDefault().getPath("C:\\Users\\aposo\\Desktop\\Data.txt"),
+				StandardOpenOption.APPEND)) {
+			fc.write(ByteBuffer.wrap(data.getBytes()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
