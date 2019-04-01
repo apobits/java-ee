@@ -47,7 +47,7 @@
 
 		<dependency>
 			<groupId>org.glassfish.jersey.security</groupId>
-			<artifactId>oauth1-client</artifactId>
+			<artifactId>oauth2-client</artifactId>
 			<version>2.28</version>
 		</dependency>
 
