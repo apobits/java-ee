@@ -48,5 +48,6 @@
 		<groupId>LearningParent</groupId>
 		<artifactId>LearningParent</artifactId>
 		<version>1.0</version>
+		<relativePath>../LearningParent/pom.xml</relativePath>
 	</parent>
 </project>
