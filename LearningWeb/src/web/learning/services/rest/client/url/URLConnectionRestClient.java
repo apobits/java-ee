@@ -11,7 +11,7 @@ public class URLConnectionRestClient {
 
 	public static void main(String[] args) throws MalformedURLException, IOException {
 
-		URLConnection connection = new URL("http://localhost:8081/LearningWeb/PersonApp/person/all").openConnection();
+		URLConnection connection = new URL("http://localhost:8081/LearningWeb/PersonApp/person/test").openConnection();
 		connection.connect();
 
 		InputStreamReader isr = new InputStreamReader(connection.getInputStream());

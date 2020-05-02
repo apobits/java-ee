@@ -14,7 +14,7 @@ public class URLRestClient {
 
 	public static void main(String args[]) {
 		try {
-			URL url = new URL("http://localhost:8081/LearningWeb/PersonApp/person/all");
+			URL url = new URL("http://localhost:8081/LearningWeb/PersonApp/person/test");
 			InputStreamReader isr = new InputStreamReader(url.openStream());
 			int letter = -1;
 			while ((letter = isr.read()) != -1) {

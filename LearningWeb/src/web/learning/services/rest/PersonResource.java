@@ -40,6 +40,7 @@ public class PersonResource {
 
 	@POST
 	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
 	// @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	// if no @Produces/@Consumes is specified all media types are accepted */*
 	public Person getPerson(@PathParam("id") long id) {
@@ -88,5 +89,14 @@ public class PersonResource {
 		}
 
 	}
+
+    @POST
+    @Path("test1")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String test1(String data) {
+	return data;
+
+    }
 
 }

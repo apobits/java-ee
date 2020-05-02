@@ -21,13 +21,13 @@ public class HTTPURLConnectionRestClient {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-	URL url = new URL("http://localhost:8081/LearningWeb/PersonApp/person/1");
+	URL url = new URL("http://localhost:8081/LearningWeb/PersonApp/person/test1");
 	HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
-	urlConn.setRequestMethod("GET");
+	urlConn.setRequestMethod("POST");
 	urlConn.setDoOutput(true);
 	urlConn.connect();
 	DataOutputStream dos = new DataOutputStream(urlConn.getOutputStream());
-	dos.writeChars("5");
+	dos.writeChars("{name:'albin'}");
 	
 	InputStreamReader isr = new InputStreamReader(urlConn.getInputStream());
 	BufferedReader br = new BufferedReader(isr);

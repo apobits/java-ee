@@ -21,15 +21,14 @@ public class JerseyRestClient {
 	 */
 	public static void main(String[] args) {
 
-		System.exit(1);
-		Client c = Client.create();
-		WebResource wr = c.resource("http://localhost:8081/LearningWeb/PersonApp/person/3");
-		Person person = wr.post(Person.class);
-		System.out.println(person);
+	    Client c = Client.create();
+	    WebResource wr = c.resource("http://localhost:8081/LearningWeb/PersonApp/person/16055133");
+	    wr.getProperties().put("Accept","application/json");
+	    Person person = wr.post(Person.class);
+	    System.out.println(person);
 
-		WebResource save = c.resource("http://localhost:8081/LearningWeb/PersonApp/person/save");
-
-		save.type(MediaType.APPLICATION_JSON).entity(new Person(Long.valueOf(5), "Nidia", "Ortiz")).put();
+	    WebResource save = c.resource("http://localhost:8081/LearningWeb/PersonApp/person/save");
+	    save.type(MediaType.APPLICATION_JSON).entity(new Person(Long.valueOf(5), "Nidia", "Ortiz")).put();
 
 	}
 
