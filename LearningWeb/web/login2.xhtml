@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head></h:head>
+<h:body>
+    <h:form prependId="false">
+        #{msg.welcomeHeading}
+        <h:inputText binding="#{login2.name}" id="name"/>
+        <h:inputText binding="#{login2.lastName}" id="lastName"/>
+        <h:commandButton value="Login">
+            <f:ajax event="click" execute="name" render="nameOutput"/>
+        </h:commandButton>
+        <h:outputText id="nameOutput" binding="#{login2.name}"/>
+        <h:outputFormat value="#{msg.price}">
+            <f:param value="#{login2.price}"/>
+        </h:outputFormat>
+    </h:form>
+</h:body>
+</html>

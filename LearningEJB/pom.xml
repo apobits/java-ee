@@ -6,14 +6,12 @@
     <packaging>ejb</packaging>
     <build>
         <sourceDirectory>ejbModule</sourceDirectory>
-        <java.resources>
+        <resources>
             <resource>
-                <directory>ejbModule</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
+                <directory>ejbModule/META-INF/</directory>
+                <targetPath>META-INF/</targetPath>
             </resource>
-        </java.resources>
+        </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

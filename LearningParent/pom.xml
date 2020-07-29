@@ -7,8 +7,8 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>../Learning</module>
 		<module>../LearningEJB</module>
 		<module>../LearningWeb</module>
+		<module>../Learning</module>
 	</modules>
 </project>
